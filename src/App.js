@@ -5,8 +5,10 @@ import { Button, TextField } from '@material-ui/core';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import { blue } from '@material-ui/core/colors/';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './global.css';
 import {MdPayment} from 'react-icons/md'
 import Routes from './Routes';
+import { Loading } from './view/components'
 
 const theme = createMuiTheme ({
   palette: {
@@ -29,6 +31,7 @@ const theme = createMuiTheme ({
 const App = () => (
   <Provider store={store}>
     <ThemeProvider theme={theme}>
+      <Loading />
       <Routes />
     </ThemeProvider>
   </Provider>
