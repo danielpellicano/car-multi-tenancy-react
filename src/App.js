@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './global.css';
 import {MdPayment} from 'react-icons/md'
 import Routes from './Routes';
-import { Loading } from './view/components'
+import { Loading, Notify, Alert, Confirm } from './view/components'
 
 const theme = createMuiTheme ({
   palette: {
@@ -31,6 +31,13 @@ const theme = createMuiTheme ({
 const App = () => (
   <Provider store={store}>
     <ThemeProvider theme={theme}>
+      <Confirm
+        open={true}
+        onClose={() => alert('close')}
+        onConfirm={() => alert('confirm')}
+      />
+      <Alert />
+      <Notify />
       <Loading />
       <Routes />
     </ThemeProvider>
